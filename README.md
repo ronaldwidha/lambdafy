@@ -24,7 +24,7 @@ $ npm install lambdafy --save
 
 ## How does it work
 
-Lambdafy overrides Express to bypass `Node.Http` and `pillarjs/send` to handle request/response. Instead creates a thin adapter that convers to/from API Gateway Proxy Integration request/response objects.
+Lambdafy overrides Express to bypass `Node.Http` and `pillarjs/send` to handle request/response. Instead, it creates a thin adapter that convers to/from API Gateway Proxy Integration request/response objects.
 
 ## License
 All rights reserved.
