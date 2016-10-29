@@ -1,5 +1,5 @@
 {
-  "name": "Lambdafy",
+  "name": "lambdafy",
   "version": "0.0.1",
   "description": "Turns Express into an AWS Lambda web framework.",
   "main": "index.js",
