@@ -1,24 +1,23 @@
 {
   "name": "lambdafy",
   "version": "0.0.3",
+  "engines": {
+    "node": ">=4.1.1"
+  },
   "description": "Turns Express into an AWS Lambda web framework.",
-  "main": "index.js",
   "dependencies": {
     "http": "0.0.0",
     "qs": "^6.3.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.18.0",
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.14.0",
-    "mocha": "^3.1.2",
-    "webpack": "^1.13.3",
-    "webpack-node-externals": "^1.5.4"
+    "mocha": "^3.1.2"
   },
+  "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "test": "webpack -d --config webpack.debugtest.config.js & node_modules\\.bin\\mocha ./.webpack/index.js",
-    "debug-test": "webpack -d --config webpack.debugtest.config.js & set NODE_ENV=test node_modules\\.bin\\mocha ./.webpack/test/index.js --debug-brk"
   },
   "repository": {
     "type": "git",
@@ -27,5 +26,15 @@
   "author": {
     "name": "Ronald Widha"
   },
-  "license": "SEE LICENSE IN LICENSE"
+  "license": "SEE LICENSE IN LICENSE",
+  "readme": "# Lambdafy\r\nTurns Express into an AWS Lambda web framework.\r\n\r\n```js\r\nimport Express from 'express'\r\nimport Lambdafy from 'lambdafy'\r\n\r\nvar app = Lambdafy.fromExpress(express())\r\napp.get('/', (req, res) => { res.status(200).send()})\r\n\r\nexports.handler = app.handleRequest\r\n```\r\n\r\n## Installation\r\n\r\n```bash\r\n$ npm install lambdafy --save\r\n```\r\n\r\n## Features\r\n\r\n * still heavily under construction - assume nothing works\r\n * source code is a mess\r\n\r\n## How does it work\r\n\r\nLambdafy overrides Express to bypass `Node.Http` and `pillarjs/send` to handle request/response. Instead, it creates a thin adapter that convers to/from API Gateway Proxy Integration request/response objects.\r\n\r\n## License\r\nAll rights reserved.\r\n\r\n",
+  "readmeFilename": "README.md",
+  "gitHead": "bb21808815d198d2864c81cedf222838977dce72",
+  "bugs": {
+    "url": "https://github.com/ronaldwidha/lambdafy/issues"
+  },
+  "homepage": "https://github.com/ronaldwidha/lambdafy#readme",
+  "_id": "lambdafy@0.0.2",
+  "_shasum": "6213cd863a9d10556d544767294839c5489d428e",
+  "_from": "lambdafy@0.0.2"
 }

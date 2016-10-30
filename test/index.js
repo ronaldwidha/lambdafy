@@ -1,6 +1,6 @@
 var expect = require('chai').expect;
 var assert = require('chai').assert;
-import Lambdafy from '../lib/lambdafy'
+var Lambdafy = require('../lib/lambdafy');
 
 describe('#area', function () {
     describe('when_instantiated', function () {

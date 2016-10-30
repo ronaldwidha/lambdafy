@@ -1,1 +1,3 @@
-module.export = require('./dist/index')
+'use strict';
+
+module.exports = require('./lib/lambdafy');
