@@ -44,6 +44,38 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/* WEBPACK VAR INJECTION */(function(module) {'use strict';
+
+	var _lambdafy = __webpack_require__(2);
+
+	var _lambdafy2 = _interopRequireDefault(_lambdafy);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	module.export = _lambdafy2.default;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)(module)))
+
+/***/ },
+/* 1 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	module.exports = function (module) {
+		if (!module.webpackPolyfill) {
+			module.deprecate = function () {};
+			module.paths = [];
+			// module.parent = undefined by default
+			module.children = [];
+			module.webpackPolyfill = 1;
+		}
+		return module;
+	};
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -52,25 +84,35 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _http = __webpack_require__(1);
+	var _http = __webpack_require__(3);
 
 	var _http2 = _interopRequireDefault(_http);
 
-	var _qs = __webpack_require__(2);
+	var _qs = __webpack_require__(4);
 
 	var _qs2 = _interopRequireDefault(_qs);
 
-	var _request = __webpack_require__(7);
+	var _request = __webpack_require__(9);
 
 	var _request2 = _interopRequireDefault(_request);
 
-	var _response = __webpack_require__(8);
+	var _response = __webpack_require__(10);
 
 	var _response2 = _interopRequireDefault(_response);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	// module.exports = {
+	//     fromExpress: function (expressApp) { return expressApp; }
+	// }
+
+	// export default class Lambdafy {
+	//     fromExpress(expressApp) {
+	//         return expressApp;
+	//     }
+	// }
 
 	var Lambdafy = function () {
 	    function Lambdafy() {
@@ -133,20 +175,20 @@
 	exports.default = Lambdafy;
 
 /***/ },
-/* 1 */
+/* 3 */
 /***/ function(module, exports) {
 
 	module.exports = require("http");
 
 /***/ },
-/* 2 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var stringify = __webpack_require__(3);
-	var parse = __webpack_require__(6);
-	var formats = __webpack_require__(5);
+	var stringify = __webpack_require__(5);
+	var parse = __webpack_require__(8);
+	var formats = __webpack_require__(7);
 
 	module.exports = {
 	    formats: formats,
@@ -155,15 +197,15 @@
 	};
 
 /***/ },
-/* 3 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-	var utils = __webpack_require__(4);
-	var formats = __webpack_require__(5);
+	var utils = __webpack_require__(6);
+	var formats = __webpack_require__(7);
 
 	var arrayPrefixGenerators = {
 	    brackets: function brackets(prefix) {
@@ -313,7 +355,7 @@
 	};
 
 /***/ },
-/* 4 */
+/* 6 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -499,7 +541,7 @@
 	};
 
 /***/ },
-/* 5 */
+/* 7 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -522,12 +564,12 @@
 	};
 
 /***/ },
-/* 6 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(4);
+	var utils = __webpack_require__(6);
 
 	var has = Object.prototype.hasOwnProperty;
 
@@ -687,7 +729,7 @@
 	};
 
 /***/ },
-/* 7 */
+/* 9 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -755,7 +797,7 @@
 	exports.default = request;
 
 /***/ },
-/* 8 */
+/* 10 */
 /***/ function(module, exports) {
 
 	'use strict';
